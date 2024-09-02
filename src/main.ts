@@ -2,7 +2,8 @@ import './style.css'
 import QRCode from 'qrcode'
 
 (async () => {
-  QRCode.toCanvas(document.querySelector<HTMLCanvasElement>('#qr-code')!, 'hello', function (error) {
+  const data = 'hello';
+  QRCode.toCanvas(document.querySelector<HTMLCanvasElement>('#qr-code')!, data, (error) => {
     const message = error ? error : 'success!';
     console.log(message);
   });
